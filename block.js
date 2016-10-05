@@ -85,8 +85,11 @@ export default (request) => {
                 case 'cautiously optimistic':
                     words[i] = 'delusional';
                     break;
-                case 'doctor who':
-                    words[i] = 'The Big Bang Theory';
+                case 'doctor':
+                    if (words[i + 1] == 'who') {
+                        words[i] = 'The Big Bang';
+                        words[i + 1] = 'Theory';
+                    }
                     break;
                 case 'win votes':
                     words[i] = 'find Pokémon';
@@ -103,7 +106,7 @@ export default (request) => {
                         words[i] = '';
                         words[i + 1] = 'poem';
 
-                    } else if (words[i+1] == 'ceo') {
+                    } else if (words[i + 1] == 'ceo') {
                         words[i] = 'this';
                         words[i + 1] = 'guy';
                     }
@@ -121,11 +124,11 @@ export default (request) => {
                     words[i] = 'Channing Tatum and his friends';
                     break;
                 case 'you':
-                if (words[i+1] == 'won\t' && words[i+2] == 'believe'){
-                    words[i] = 'I\'m';
-                    words[i+1] = 'really sad';
-                    words[i+2] = 'about';
-                }
+                    if (words[i + 1] == 'won\t' && words[i + 2] == 'believe') {
+                        words[i] = 'I\'m';
+                        words[i + 1] = 'really sad';
+                        words[i + 2] = 'about';
+                    }
                     break;
                 default:
                     break;
